@@ -12,15 +12,23 @@ extern "C" {
 void app_main(void);
 }
 
+void setup(void){
+	Serial.begin(921600);
+}
+
+void loop(void){
+	Serial.println("Test");
+	delay(1000);
+}
 
 // Main function or entry point
 void app_main() {
 	initArduino();
-	Serial.begin(921600);
+
+	setup(); //Arduino setup function
 
 	while(true){
-		// Similar arduino loop
-		Serial.println("Test");
-		delay(1000);
+		//Arduino loop function
+		loop();
 	}
 }
